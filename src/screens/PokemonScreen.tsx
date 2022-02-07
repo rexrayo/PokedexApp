@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack'
+import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParams } from '../navigator/Navigator'
 import  Icon  from 'react-native-vector-icons/Ionicons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -47,7 +47,7 @@ export const PokemonScreen = ( { navigation, route }: Props ) => {
                 <Text
                     style={{
                         ...styles.pokemonName,
-                        top: top + 45
+                        top: top + 35
                     }}
                 >
                     { name + '\n' } #{ id }
@@ -90,7 +90,7 @@ export const PokemonScreen = ( { navigation, route }: Props ) => {
 const styles = StyleSheet.create({
     headerContainer: {
         zIndex: 999,
-        height: 320,
+        height: 280,
         alignItems: 'center',
         borderBottomRightRadius: 1000,
         borderBottomLeftRadius: 1000,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         left: 20
     },
     pokemonName: {
-        fontSize: 40,
+        fontSize: 30,
         color: 'white',
         alignSelf: 'flex-start',
         left: 20

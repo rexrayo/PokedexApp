@@ -4,6 +4,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { styles } from '../theme/appTheme';
 import { usePokemonPaginated } from '../hooks/usePokemonPaginated';
 import { PokemonCard } from '../components/PokemonCard';
+import { Background } from '../components/Background';
+import SplashScreen from 'react-native-splash-screen'
+import { useEffect } from 'react';
 
 export const HomeScreen = () => {
 
@@ -11,13 +14,14 @@ export const HomeScreen = () => {
 
     const { simplePokemonList, isLoading, loadPokemons } = usePokemonPaginated();
 
+    useEffect(() => {
+        SplashScreen.hide();
+    }, []);
+    
 
     return (
         <>
-            <Image
-                source={ require('../assets/pokebola.png') }
-                style={ styles.pokeballBG }
-            />
+            <Background />
 
             <View
                 style={{ alignItems: 'center' }}
